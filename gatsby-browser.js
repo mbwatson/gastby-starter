@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from 'react'
+import { DefaultLayout } from './src/components/layout/default'
+import { LayoutContextProvider } from './src/contexts'
 
-// You can delete this file if you're not using it
+export const wrapPageElement = ({ element, props }) => {
+    // props provide same data to Layout as Page element will get
+    // including location, data, etc - you don't need to pass it
+    return (
+        <LayoutContextProvider>
+            <DefaultLayout>
+                { element }
+            </DefaultLayout>
+        </LayoutContextProvider>
+    )
+}
