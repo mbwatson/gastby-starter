@@ -109,10 +109,10 @@ export const MobileMenu = ({ items }) => {
 
     return (
         <Wrapper>
-            <Toggler onClick={ handleToggleMenu }>
+            <Toggler onClick={ handleToggleMenu } id="menu-toggler" aria-controls="menu-drawer">
                 { visible ? <CloseIcon size="36" fill="var(--color-white)" /> : <HamburgerIcon size="36" fill="var(--color-white)"  /> }
             </Toggler>
-            <Drawer active={ visible } onKeyDown={ e => console.log(e) }>
+            <Drawer active={ visible } onKeyDown={ e => console.log(e) } aria-expanded={ visible } id="menu-drawer" aria-labelledby="menu-toggler">
                 <Nav>
                     { items.map(item => <MenuItem key={ item.text } to={ item.path } activeClassName="active" onClick={ handleCloseMenu }>{ item.text }</MenuItem>) }
                 </Nav>
