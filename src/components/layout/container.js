@@ -15,6 +15,6 @@ export const Container = styled.div`
 
 export const PageContent = styled(Container)`
     margin: auto;
-    margin-top: TOP_MARGIN;
-    margin-bottom: BOTTOM_MARGIN;
+    margin-top: ${ TOP_MARGIN };
+    margin-bottom: ${ BOTTOM_MARGIN };
 `

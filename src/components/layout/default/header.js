@@ -1,7 +1,4 @@
-import { Link } from "gatsby"
 import styled from 'styled-components'
-import PropTypes from "prop-types"
-import React from "react"
 
 export const Header = styled.header`
     // border: 1px solid #99f; & * { border: 1px solid #99f; }
