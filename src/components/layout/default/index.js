@@ -23,7 +23,7 @@ export const DefaultLayout = ({ children }) => {
 
     return (
         <LayoutWrapper>
-            <Header>
+            <Header compact={ isCompact }>
                 <Brand>
                     Site Title
                 </Brand>
