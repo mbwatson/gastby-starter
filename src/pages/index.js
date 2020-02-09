@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { PageContent } from '../components/layout'
+import { Title } from '../components/typography'
 import { SEO } from '../components/seo'
 
 const IndexPage = () => (
     <PageContent>
-        <h1>Home</h1>
+        <Title>Home</Title>
     </PageContent>
 )
 
