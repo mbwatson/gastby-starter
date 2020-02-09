@@ -31,7 +31,7 @@ const MenuItem = styled(Link)`
 export const Menu = ({ items }) => {
     return (
         <Navbar>
-            { items.map(item => <MenuItem to={ item.path }>{ item.text }</MenuItem>) }
+            { items.map(item => <MenuItem key={ item.text } to={ item.path }>{ item.text }</MenuItem>) }
         </Navbar>
     )
 }

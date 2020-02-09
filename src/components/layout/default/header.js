@@ -11,6 +11,6 @@ export const Header = styled.header`
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
-    height: 5rem;
+    height: 4.5rem;
     filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.5));
 `
