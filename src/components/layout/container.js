@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+const DEFAULT_WIDTH = "calc(100vw - 4rem)"
+const DEFAULT_MAXWIDTH = "800px"
+const TOP_MARGIN = '2rem'
+const BOTTOM_MARGIN = '2rem'
+
 export const Container = styled.div`
     & * { border: 1px solid #f99; }
     width: ${ props => props.width || DEFAULT_WIDTH };
@@ -8,13 +13,8 @@ export const Container = styled.div`
     ${ props => props.center ? 'margin: auto;' : undefined }
 `
 
-const DEFAULT_WIDTH = "calc(100% - 4rem)"
-const DEFAULT_MAXWIDTH = "800px"
-const TOP_GUTTER = '2rem'
-const BOTTOM_GUTTER = '2rem'
-
 export const PageContent = styled(Container)`
     margin: auto;
-    margin-top: ${ props => props.gutters ? TOP_GUTTER : 0 };
-    margin-bottom: ${ props => props.gutters ? BOTTOM_GUTTER : 0 };
+    margin-top: TOP_MARGIN;
+    margin-bottom: BOTTOM_MARGIN;
 `
