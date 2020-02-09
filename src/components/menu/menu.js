@@ -21,6 +21,7 @@ const MenuItem = styled(Link)`
     text-decoration: none;
     text-transform: uppercase;
     color: var(--color-white);
+    transition: background-color 250ms;
     background-color: transparent;
     &:hover {
         background-color: var(--color-primary);
