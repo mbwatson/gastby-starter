@@ -21,18 +21,27 @@ const MenuItem = styled(Link)`
     text-decoration: none;
     text-transform: uppercase;
     color: var(--color-white);
-    transition: background-color 250ms;
+    padding: 1rem 2rem;
+    transition: background-color 250ms, border-bottom-color 250ms;
     background-color: transparent;
+    border-top-width: 0.5rem;
+    border-top-style: solid;
+    border-top-color: transparent;
+    border-bottom-width: 0.5rem;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    &.active {
+        border-bottom-color: var(--color-primary);
+    }
     &:hover {
         background-color: var(--color-primary);
     }
-    padding: 2rem;
 `
 
 export const Menu = ({ items }) => {
     return (
         <Navbar>
-            { items.map(item => <MenuItem key={ item.text } to={ item.path }>{ item.text }</MenuItem>) }
+            { items.map(item => <MenuItem key={ item.text } to={ item.path } activeClassName="active">{ item.text }</MenuItem>) }
         </Navbar>
     )
 }
