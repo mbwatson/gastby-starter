@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { CloseIcon, HamburgerIcon } from '../icons'
+import { useTheme } from '../../hooks'
 
 const Overlay = styled.div`
     position: fixed;
@@ -38,22 +39,22 @@ const Toggler = styled.button`
     right: 1rem;
 `
 
-const Drawer = styled.div`
+const Drawer = styled.div(({ theme, active }) => `
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     width: calc(100vw - 6rem);
     height: 100vh;
-    background-color: var(--color-primary);
+    background-color: ${ theme.color.primary.main };
     transition: transform 500ms;
-    transform: ${ props => props.active ? 'translateX(0)' : 'translateX(-100vw)'};
+    transform: ${ active ? 'translateX(0)' : 'translateX(-100vw)'};
     padding: 2rem 0 0 0;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-`
+`)
 
 const Nav = styled.nav`
     width: 100%;
@@ -86,8 +87,9 @@ const MenuItem = styled(Link)`
 `
 
 export const MobileMenu = ({ items }) => {
+    const theme = useTheme()
     const [visible, setVisible] = useState(false)
-    
+
     const handleToggleMenu = () => setVisible(!visible)
     const handleCloseMenu = () => setVisible(false)
 
@@ -109,7 +111,7 @@ export const MobileMenu = ({ items }) => {
     return (
         <Wrapper>
             <Toggler onClick={ handleToggleMenu } id="menu-toggler" aria-controls="menu-drawer">
-                { visible ? <CloseIcon size="36" fill="var(--color-white)" /> : <HamburgerIcon size="36" fill="var(--color-white)"  /> }
+                { visible ? <CloseIcon size="36" fill={ theme.color.white } /> : <HamburgerIcon size="36" fill={ theme.color.white }  /> }
             </Toggler>
             <Drawer active={ visible } onKeyDown={ e => console.log(e) } aria-expanded={ visible } id="menu-drawer" aria-labelledby="menu-toggler">
                 <Nav>

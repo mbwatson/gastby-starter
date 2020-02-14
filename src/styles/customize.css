@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+/**
+keep these color definitions around?
+**/
+
 :root {
     --color-white: #eee;
     --color-black: #222;

@@ -11,7 +11,7 @@ const Navbar = styled.nav`
     align-items: center;
 `
 
-const MenuItem = styled(Link)`
+const MenuItem = styled(Link)(({ theme }) => `
     // flex: 1;
     display: flex;
     flex-direction: row;
@@ -20,7 +20,7 @@ const MenuItem = styled(Link)`
     height: 100%;
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--color-white);
+    color: ${ theme.color.white };
     padding: 1rem 2rem;
     transition: background-color 250ms, border-bottom-color 250ms;
     background-color: transparent;
@@ -31,12 +31,12 @@ const MenuItem = styled(Link)`
     border-bottom-style: solid;
     border-bottom-color: transparent;
     &.active {
-        border-bottom-color: var(--color-primary);
+        border-bottom-color: ${ theme.color.primary.main };
     }
     &:hover {
-        background-color: var(--color-primary);
+        background-color: ${ theme.color.primary.main };
     }
-`
+`)
 
 export const Menu = ({ items }) => {
     return (

@@ -7,4 +7,7 @@ export const Brand = styled.div`
     align-items: center;
     padding: 1rem;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 120%;
 `

@@ -6,8 +6,8 @@ import { Main } from './main'
 import { Footer } from './footer'
 import { Brand } from '../../brand'
 import { Menu, MobileMenu } from '../../menu'
-import { menuItems } from '../../../data'
 import { useLayoutContext } from '../../../contexts'
+import { useMenu } from '../../../hooks'
 
 import '../../../styles/normalize.css'
 import '../../../styles/customize.css'
@@ -19,6 +19,7 @@ const LayoutWrapper = styled.div`
 `
 
 export const DefaultLayout = ({ children }) => {
+    const menuItems = useMenu()
     const { isCompact } = useLayoutContext()
 
     return (

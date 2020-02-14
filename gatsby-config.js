@@ -3,6 +3,12 @@ module.exports = {
     title: `Default Starter`,
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum possimus iusto inventore.`,
     author: `mbwatson`,
+    menuItems:[
+      { text: 'Home',    path: '/', },
+      { text: 'About',   path: '/about', },
+      { text: 'News',    path: '/news', },
+      { text: 'Contact', path: '/contact', },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
